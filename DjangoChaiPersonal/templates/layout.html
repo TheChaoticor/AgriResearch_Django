@@ -1,3 +1,4 @@
+{% load static tailwind_tags %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,10 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% tailwind_css %}
 </head>
 <body>
     {% block content %}{% endblock %}
-</body>
+    
+
 <nav>Navbar</nav>
 {% block heman %}{% endblock %}
+{% if settings.DEBUG %}
+<script src="http://localhost:8000/__reload__/reload.js"></script>
+{% endif %}
+</body>
 </html>
