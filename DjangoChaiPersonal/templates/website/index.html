@@ -6,3 +6,13 @@
 <h1 class="bg-red-500">
     I am the NavBar</h1>
 {% endblock heman %}
+
+{% for chai in chais %}
+  <div class="chai-item">
+    <img src="{{ chai.image.url }}" alt="{{ chai.name }}">
+    <h3>{{ chai.name }}</h3>
+    <p>{{ chai.description }}</p>
+    <a href="{% url 'chai_detail' chai.id %}">Details</a>
+  </div>
+
+{% endfor %}
