@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from templates import website
 
 def home(request):
-    return render(request,'website/index.html')
+    return HttpResponse("Hello about World")
 
 def about(request):
     return HttpResponse("Hello about World")

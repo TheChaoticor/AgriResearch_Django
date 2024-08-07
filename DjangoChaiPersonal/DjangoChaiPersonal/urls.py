@@ -22,9 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home,name='home'),
-    path('contact/',views.contact,name='contact'),
-    path('about/',views.about,name='about'),
-    path('chai/',include('chai.urls')),
+    path('',views.home,name='home'),
+ 
+    path('research/',include('research.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
